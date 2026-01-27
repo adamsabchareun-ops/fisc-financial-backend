@@ -1,0 +1,51 @@
+{
+  "node": {
+    "70649e00ac30b0421d1341c642b7ec0b860a4a3de3": {
+      "workers": {
+        "app/horizon/page": {
+          "moduleId": "[project]/.next-internal/server/app/horizon/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/allocate.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "allocateIncome",
+          "filename": "src/app/actions/allocate.ts"
+        }
+      },
+      "layer": {
+        "app/horizon/page": "action-browser"
+      },
+      "filename": "src/app/actions/allocate.ts",
+      "exportedName": "allocateIncome"
+    },
+    "704f409a6f3efa47e549bd3dbac36a3b02b3f55caf": {
+      "workers": {
+        "app/buckets/page": {
+          "moduleId": "[project]/.next-internal/server/app/buckets/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/createAllocation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/deleteAllocation.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createAllocation",
+          "filename": "src/app/actions/createAllocation.ts"
+        }
+      },
+      "layer": {
+        "app/buckets/page": "action-browser"
+      },
+      "filename": "src/app/actions/createAllocation.ts",
+      "exportedName": "createAllocation"
+    },
+    "4095ee1fda62dbe90faa94e84eaadac63f03750047": {
+      "workers": {
+        "app/buckets/page": {
+          "moduleId": "[project]/.next-internal/server/app/buckets/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/createAllocation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/deleteAllocation.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteAllocation",
+          "filename": "src/app/actions/deleteAllocation.ts"
+        }
+      },
+      "layer": {
+        "app/buckets/page": "action-browser"
+      },
+      "filename": "src/app/actions/deleteAllocation.ts",
+      "exportedName": "deleteAllocation"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "A/X1x9vO7YFpX9dBYvspodP8fSwPl53tKzEDYyJjckQ="
+}

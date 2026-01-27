@@ -1,4 +1,4 @@
-import { supabase } from './auth'
+import { supabase } from '../utils/supabase'
 
 export const getAllocations = async (payPeriodId: string) => {
     const { data, error } = await supabase

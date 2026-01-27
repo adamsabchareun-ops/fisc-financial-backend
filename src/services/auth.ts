@@ -1,9 +1,5 @@
-import { createClient } from '@supabase/supabase-js'
+import { supabase } from '../utils/supabase'
 
-// Initialize client (Ensure you have a separate config file or use environment variables correctly)
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-export const supabase = createClient(supabaseUrl, supabaseKey)
 
 /**
  * Signs up a new user and automatically creates their profile metadata.
@@ -24,7 +20,7 @@ export const signUpUser = async (email: string, password: string, firstName: str
         }
       }
     })
-    
+
     if (error) throw error
     return { data, error: null }
   } catch (error: any) {
@@ -62,7 +58,7 @@ export const resetPassword = async (email: string) => {
     const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: 'http://localhost:3000/auth/update-password', // Update for production
     })
-    
+
     if (error) throw error
     return { data, error: null }
   } catch (error: any) {

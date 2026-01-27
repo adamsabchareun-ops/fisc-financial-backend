@@ -1,0 +1,5 @@
+{
+  "/buckets/page": "app/buckets/page.js",
+  "/horizon/page": "app/horizon/page.js",
+  "/login/page": "app/login/page.js"
+}

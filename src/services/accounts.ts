@@ -1,4 +1,4 @@
-import { supabase } from './auth'
+import { supabase } from '../utils/supabase'
 
 /**
  * Fetches all accounts for the logged-in user.

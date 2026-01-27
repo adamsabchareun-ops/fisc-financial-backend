@@ -1,4 +1,4 @@
-import { supabase } from './auth'
+import { supabase } from '../utils/supabase'
 
 /**
  * Adds a new transaction. 

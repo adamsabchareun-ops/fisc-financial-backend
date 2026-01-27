@@ -1,4 +1,4 @@
-import { supabase } from './auth'
+import { supabase } from '../utils/supabase'
 
 export const getIncomeSources = async () => {
     const { data, error } = await supabase

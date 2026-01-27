@@ -1,0 +1,1 @@
+SELECT name, percentage FROM allocation_buckets;

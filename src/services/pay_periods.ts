@@ -1,4 +1,4 @@
-import { supabase } from './auth'
+import { supabase } from '../utils/supabase'
 
 export const getCurrentPayPeriod = async () => {
     const today = new Date().toISOString().split('T')[0]
