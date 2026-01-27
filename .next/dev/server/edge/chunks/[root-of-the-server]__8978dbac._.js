@@ -34,7 +34,7 @@ async function middleware(request) {
         }
     });
     // 2. Create the Supabase client
-    const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$ssr$2f$dist$2f$module$2f$createServerClient$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["createServerClient"])(("TURBOPACK compile-time value", "http://127.0.0.1:54321"), ("TURBOPACK compile-time value", "sb_publishable_ACJWlzQH1ZjBrEguHvfOxg_3BJgxAaH"), {
+    const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$ssr$2f$dist$2f$module$2f$createServerClient$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["createServerClient"])(("TURBOPACK compile-time value", "https://ltnasudddtanriqdgcpw.supabase.co"), ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0bmFzdWRkZHRhbnJpcWRnY3B3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkwNDIyNDAsImV4cCI6MjA4NDYxODI0MH0.-NSOwsdfR9EJ3ykYWEsumAJaTalS33n4oiofTVyjgk8"), {
         cookies: {
             getAll () {
                 return request.cookies.getAll();

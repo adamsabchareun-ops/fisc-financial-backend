@@ -55,7 +55,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 // Initialize Supabase Admin Client (Service Role)
 // This bypasses RLS to ensure we can update any user's data securely from the server
-const supabaseAdmin = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(("TURBOPACK compile-time value", "http://127.0.0.1:54321"), process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabaseAdmin = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(("TURBOPACK compile-time value", "https://ltnasudddtanriqdgcpw.supabase.co"), process.env.SUPABASE_SERVICE_ROLE_KEY);
 async function allocateIncome(userId, income, buckets) {
     try {
         if (!income || income <= 0) {

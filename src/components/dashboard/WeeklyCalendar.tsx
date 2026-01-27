@@ -34,7 +34,10 @@ export const WeeklyCalendar = ({ payPeriods }: WeeklyCalendarProps) => {
                                 </div>
                             </div>
                             <div>
-                                <span className="font-semibold text-text-charcoal">${period.total_income.toLocaleString()}</span>
+                                {/* FIX APPLIED BELOW: Added ( || 0) to prevent crash on null values */}
+                                <span className="font-semibold text-text-charcoal">
+                                    ${(period.total_income || 0).toLocaleString()}
+                                </span>
                             </div>
                         </div>
                     );

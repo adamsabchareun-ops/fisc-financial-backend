@@ -132,8 +132,8 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@supabase/supabase-js/dist/index.mjs [app-ssr] (ecmascript) <locals>");
 ;
-const supabaseUrl = ("TURBOPACK compile-time value", "http://127.0.0.1:54321");
-const supabaseKey = ("TURBOPACK compile-time value", "sb_publishable_ACJWlzQH1ZjBrEguHvfOxg_3BJgxAaH");
+const supabaseUrl = ("TURBOPACK compile-time value", "https://ltnasudddtanriqdgcpw.supabase.co");
+const supabaseKey = ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0bmFzdWRkZHRhbnJpcWRnY3B3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkwNDIyNDAsImV4cCI6MjA4NDYxODI0MH0.-NSOwsdfR9EJ3ykYWEsumAJaTalS33n4oiofTVyjgk8");
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(supabaseUrl, supabaseKey);
