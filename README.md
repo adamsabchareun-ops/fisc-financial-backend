@@ -23,14 +23,20 @@ cd fisc-financial-backend
 The application connects to a live Supabase backend for Authentication. You need to configure this manually.
 
 1.  Create a file named `.env.local` in the root folder of the project.
-2.  Paste the following template into it:
+2.  **How to get these keys:**
+    *   Log in to your [Supabase Dashboard](https://supabase.com/dashboard).
+    *   Select the **'Vital Code Company'** (or your active) project.
+    *   Go to **Project Settings** (Cog icon at the bottom left) -> **API**.
+    *   Copy the **Project URL** and paste it as `NEXT_PUBLIC_SUPABASE_URL`.
+    *   Copy the **anon / public key** and paste it as `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
 
+Your `.env.local` should look like this:
 ```bash
-NEXT_PUBLIC_SUPABASE_URL="ask_stephan_for_this"
-NEXT_PUBLIC_SUPABASE_ANON_KEY="ask_stephan_for_this"
+NEXT_PUBLIC_SUPABASE_URL="https://your-project.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key-here"
 ```
 
-> **WARNING**: Ask the project lead (Stephan) for the actual values of these keys. **Do not commit them to GitHub.**
+> **WARNING**: Do not commit these keys to GitHub.
 
 ## 4. Running the Application (The 'One-Click' Method)
 We use Docker to run the entire stack (Database + Website). You do not need to install Node.js locally if you don't want to.
