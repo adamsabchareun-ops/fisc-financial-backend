@@ -1,94 +1,66 @@
-# Fisc Financial - Developer Onboarding Guide
-Welcome to the team. If you are reading this, you are likely setting up your local environment for the first time.
+# Fisc Financial - Developer Guide
 
-Please read this entire document before you run any code. It will save you from the common setup errors we have already solved.
+## 1. Project Overview
+Fisc Financial is a subscription-based financial health dashboard built with Next.js, Supabase, and PostgreSQL.
 
-## 1. Understanding the Repo Structure
-First, a clarification on the name. You cloned a repository called 'fisc-financial-backend'. However, this is actually a Monorepo. It contains everything:
+## 2. Prerequisites (Step-by-Step)
+You need the following software installed before you begin:
 
-*   The Next.js Frontend (`src/app`, `components`)
-*   The Backend Logic (Server Actions, Supabase utilities)
-*   The Database Definitions (SQL migrations)
+*   **[Docker Desktop](https://www.docker.com/products/docker-desktop/)**: Essential for running the app (Database + Frontend).
+*   **[VS Code](https://code.visualstudio.com/)**: Recommended editor.
+*   **[Git](https://git-scm.com/downloads)**: For version control.
 
-You do not need to look for a separate frontend repository. It is all here.
+## 3. First Time Setup
 
-## 2. Prerequisites
-Before you start, make sure you have:
-
-*   Node.js installed on your machine.
-*   Access to the 'Vital Code Company' organization on Supabase.
-*   Access to this GitHub repository.
-
-## 3. The Environment Keys (Critical Step)
-The application will crash immediately if you try to run it without API keys. We do not commit these keys to GitHub for security reasons. You need to create them manually.
-
-1.  Create a new file in the root folder of this project named: `.env.local`
-2.  Log in to the Supabase Dashboard.
-3.  Go to **Project Settings -> API**.
-
-You need two values from that page:
-
-*   Project URL
-*   anon public key
-
-Paste them into your new `.env.local` file exactly like this:
-
+### Step 1: Clone the Repo
+Open your terminal and run:
 ```bash
-NEXT_PUBLIC_SUPABASE_URL="paste_your_url_here"
-NEXT_PUBLIC_SUPABASE_ANON_KEY="paste_your_anon_key_here"
+git clone https://github.com/adamsabchareun-ops/fisc-financial-backend.git
+cd fisc-financial-backend
 ```
 
-Save the file.
+### Step 2: Environment Keys
+The application connects to a live Supabase backend for Authentication. You need to configure this manually.
 
-## 4. Installation and Running
-Now you are ready to boot up the app. Open your terminal in the project folder and run:
+1.  Create a file named `.env.local` in the root folder of the project.
+2.  Paste the following template into it:
 
 ```bash
-npm install
-npm run dev
+NEXT_PUBLIC_SUPABASE_URL="ask_stephan_for_this"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="ask_stephan_for_this"
 ```
 
-Open your web browser to [http://localhost:3000](http://localhost:3000).
+> **WARNING**: Ask the project lead (Stephan) for the actual values of these keys. **Do not commit them to GitHub.**
 
-## 5. Local Development (Docker)
-We use Docker to run a local database for testing and schema changes.
+## 4. Running the Application (The 'One-Click' Method)
+We use Docker to run the entire stack (Database + Website). You do not need to install Node.js locally if you don't want to.
 
-1.  Run `docker-compose up -d` to start the local database.
-2.  To connect the app to this local database, update your `.env.local` file with:
+1.  **Start the App**:
     ```bash
-    DATABASE_URL="postgresql://postgres:password@localhost:5432/fisc_financial_local"
+    docker-compose up -d
+    ```
+2.  **Access**:
+    Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 5. Daily Workflow
+
+*   **Stop the App**:
+    ```bash
+    docker-compose down
     ```
 
-**Note:** Since this is a raw database container, Supabase Auth and Storage services are not included. Use this for testing database queries or Prisma migrations only.
+*   **View Logs**:
+    ```bash
+    docker-compose logs -f web
+    ```
 
-## 6. Troubleshooting Common Issues
-New developers often hit these specific speed bumps. Check this list if you get stuck.
+*   **Rebuild** (If you add new packages):
+    ```bash
+    docker-compose up -d --build
+    ```
 
-**ISSUE: I see a QR Code or a 'Welcome' screen.**
-**SOLUTION:** This is a default overlay from our development tools or your browser extensions. We do not use QR codes for login.
-1.  Ignore the terminal output.
-2.  In your browser address bar, manually type [http://localhost:3000/signup](http://localhost:3000/signup) or [http://localhost:3000/login](http://localhost:3000/login) to bypass the screen.
+## 6. Troubleshooting
 
-**ISSUE: I see a red error 'Could not find the table public.pay_periods in the schema cache'.**
-**SOLUTION:** The Supabase API sometimes needs a nudge to recognize new tables.
-1.  Go to Supabase Dashboard -> Project Settings -> API.
-2.  Click 'Reload schema cache' at the bottom.
-3.  Refresh your local browser.
-
-**ISSUE: The dashboard is empty / zeros.**
-**SOLUTION:** This is normal. We have not built the onboarding wizard yet. If you are a new user, you have no data, so the app correctly shows zero.
-
-## 7. Architecture Overview
-For those working on backend features:
-
-*   **Database:** We use PostgreSQL on Supabase.
-*   **Security:** We use Row Level Security (RLS). This means you cannot simply query "all users." You can only query data where 'user_id' matches the currently logged-in user.
-*   **Auth:** We use Supabase Auth (Email/Password).
-
-If you are working on the frontend:
-
-*   We use Tailwind CSS for styling.
-*   Components are located in `src/components`.
-*   Pages are in `src/app`.
-
-If you get stuck, check the 'Standup' notes in our documentation folder or ask Adam.
+*   **"Site can't be reached"**: Ensure Docker Desktop is running.
+*   **"Infinite Refresh Loop"**: This is fixed by the volume config, but if it happens, restart Docker.
+*   **"Database Connection Error"**: Ensure the `db` container is healthy in the Docker Dashboard.
