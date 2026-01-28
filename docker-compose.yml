@@ -9,8 +9,11 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+      - /app/.next
     env_file:
       - .env.local
+    environment:
+      - WATCHPACK_POLLING=true
     depends_on:
       - db
 
