@@ -1,5 +1,21 @@
 version: '3.8'
 services:
+  # The Frontend Website
+  web:
+    build: .
+    container_name: fisc_frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+    depends_on:
+      - db
+
+  # The Database
   db:
     image: postgres:15-alpine
     container_name: fisc_local_db
@@ -12,5 +28,6 @@ services:
       - '5432:5432'
     volumes:
       - db_data:/var/lib/postgresql/data
+
 volumes:
   db_data:
