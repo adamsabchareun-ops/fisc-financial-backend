@@ -50,7 +50,18 @@ npm run dev
 
 Open your web browser to [http://localhost:3000](http://localhost:3000).
 
-## 5. Troubleshooting Common Issues
+## 5. Local Development (Docker)
+We use Docker to run a local database for testing and schema changes.
+
+1.  Run `docker-compose up -d` to start the local database.
+2.  To connect the app to this local database, update your `.env.local` file with:
+    ```bash
+    DATABASE_URL="postgresql://postgres:password@localhost:5432/fisc_financial_local"
+    ```
+
+**Note:** Since this is a raw database container, Supabase Auth and Storage services are not included. Use this for testing database queries or Prisma migrations only.
+
+## 6. Troubleshooting Common Issues
 New developers often hit these specific speed bumps. Check this list if you get stuck.
 
 **ISSUE: I see a QR Code or a 'Welcome' screen.**
@@ -67,7 +78,7 @@ New developers often hit these specific speed bumps. Check this list if you get 
 **ISSUE: The dashboard is empty / zeros.**
 **SOLUTION:** This is normal. We have not built the onboarding wizard yet. If you are a new user, you have no data, so the app correctly shows zero.
 
-## 6. Architecture Overview
+## 7. Architecture Overview
 For those working on backend features:
 
 *   **Database:** We use PostgreSQL on Supabase.
