@@ -29,7 +29,10 @@ export default function LoginPage() {
                         emailRedirectTo: `${location.origin}/auth/callback`,
                     },
                 })
-                if (error) throw error
+                if (error) {
+                    console.error('FULL SIGNUP ERROR:', error)
+                    throw error
+                }
                 setMessage({ text: 'Check your email for the confirmation link.', type: 'success' })
             } else {
                 // Determine session expiry based on Remember Me
