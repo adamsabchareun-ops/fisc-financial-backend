@@ -1,7 +1,0 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/auth/callback/route": "app/auth/callback/route.js",
-  "/buckets/page": "app/buckets/page.js",
-  "/horizon/page": "app/horizon/page.js",
-  "/login/page": "app/login/page.js"
-}

@@ -6,6 +6,7 @@ services:
     container_name: fisc_frontend
     ports:
       - "3000:3000"
+    command: npm run dev -- -H 0.0.0.0
     volumes:
       - .:/app
       - /app/node_modules
